@@ -99,7 +99,7 @@ python main.py example.com --url https://example.com --report results.json
 
 ## 🧑‍💻 Author
 
-**Your Name** – [@yourhandle](https://github.com/yourusername)
+**ABUBAKAR NASTEH** – [@yourhandle](https://github.com/Abuzkah)
 
 ---
 
