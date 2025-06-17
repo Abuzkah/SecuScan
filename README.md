@@ -1,26 +1,102 @@
-# SecuScan
+````markdown
+# 🛡️ SecuScan – Lightweight Python Web Vulnerability Scanner
 
-SecuScan is a Python command-line tool that scans a target website or IP for common web vulnerabilities, including:
-- Open ports (Nmap-lite)
-- HTTP headers misconfigurations
-- Outdated server software (optional)
-- Directory brute-forcing (like dirb)
-- Basic SQLi/XSS pattern detection (optional)
+SecuScan is a beginner-friendly, Python-based vulnerability scanner designed to identify common web and network security issues. It's ideal for ethical hackers, security enthusiasts, and students looking to learn practical cybersecurity scanning techniques.
 
-## Features
-1. **Port Scanner**: Scan for open ports and display basic service info.
-2. **HTTP Security Headers Check**: Check for missing security headers.
-3. **Directory/File Enumeration**: Brute-force common files/dirs using a wordlist.
-4. **(Optional) Outdated Software & Pattern-based Scanning**: Detect outdated server software, XSS, and SQLi patterns.
+---
 
-## Usage
-1. Install dependencies: `pip install -r requirements.txt`
-2. Run: `python secuscan.py --help`
+## 🚀 Features
 
-## Requirements
-- Python 3.8+
-- See `requirements.txt` for dependencies
+- ✅ **Port Scanning** (Top 15 common ports)
+- ✅ **HTTP Security Header Checker**
+- ✅ **Directory Bruteforcing**
+- 🧪 Optional: Banner grabbing, basic SQLi/XSS detection (coming soon)
 
-## Roadmap
-- Add logging and PDF/HTML report generation
-- Add advanced vulnerability checks
+---
+
+## 🛠️ Tech Stack
+
+- Python 3
+- `socket` – for network scans
+- `requests` – for HTTP checks
+- `threading` – for parallel port scanning
+
+---
+
+## 📸 Demo
+
+![screenshot](screenshots/secuscan-demo.png)
+
+---
+
+## 📥 Installation
+
+```bash
+git clone https://github.com/yourusername/secuscan.git
+cd secuscan
+pip install -r requirements.txt
+````
+
+---
+
+## 🧪 Usage
+
+```bash
+python secuscan.py
+```
+
+**Input formats:**
+
+* For **HTTP checks**: `https://example.com`
+* For **Port scanning**: `example.com` or IP `192.168.1.1`
+
+---
+
+## 🧠 How It Works
+
+| Module         | Description                               |
+| -------------- | ----------------------------------------- |
+| Port Scanner   | Scans 15+ top ports, checks for openness  |
+| Header Check   | Audits missing HTTP security headers      |
+| Dir Bruteforce | Tries to discover common hidden endpoints |
+
+---
+
+## 🔒 Ethical Use Only
+
+> ⚠️ **This tool is intended for legal, educational, and authorized testing purposes only.** Do **not** scan systems you don’t own or have explicit permission to audit.
+
+---
+
+## 🌱 TODO
+
+* [ ] Add banner grabbing
+* [ ] Export results to PDF/HTML
+* [ ] Add advanced vulnerability checks (e.g., XSS, SQLi)
+* [ ] Add Shodan API integration
+* [ ] Build Flask web interface
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**\[ABUBAKAR NASTEH]**
+🔗 [yourportfolio.com](https://yourportfolio.com)
+🐦 [@yourhandle](https://twitter.com/skycrue44)
+📧 [your.email@example.com](mailto:your.email@example.com)
+
+---
+
+## ⭐️ Support
+
+If you find this project helpful, please ⭐ the repo to support ongoing development!
+
+```
+
+---
