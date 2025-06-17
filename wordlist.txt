@@ -1,0 +1,13 @@
+# Sample wordlist for directory brute-forcing
+admin
+backup
+backup.zip
+login
+uploads
+images
+config
+config.php
+robots.txt
+.htaccess
+index.php
+index.html
