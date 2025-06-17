@@ -1,102 +1,109 @@
-````markdown
-# 🛡️ SecuScan – Lightweight Python Web Vulnerability Scanner
+# 🔒 SecuScan – Modular Web Vulnerability Scanner
 
-SecuScan is a beginner-friendly, Python-based vulnerability scanner designed to identify common web and network security issues. It's ideal for ethical hackers, security enthusiasts, and students looking to learn practical cybersecurity scanning techniques.
-
----
-
-## 🚀 Features
-
-- ✅ **Port Scanning** (Top 15 common ports)
-- ✅ **HTTP Security Header Checker**
-- ✅ **Directory Bruteforcing**
-- 🧪 Optional: Banner grabbing, basic SQLi/XSS detection (coming soon)
+**SecuScan** is a beginner-friendly but powerful web security scanner written in Python. It helps ethical hackers, cybersecurity students, and developers perform essential vulnerability checks on web services.
 
 ---
 
-## 🛠️ Tech Stack
+## ✨ Features
 
-- Python 3
-- `socket` – for network scans
-- `requests` – for HTTP checks
-- `threading` – for parallel port scanning
-
----
-
-## 📸 Demo
-
-![screenshot](screenshots/secuscan-demo.png)
+- 🔍 **Port Scanning** – Detects open TCP ports.
+- 🛡️ **HTTP Security Header Checker** – Identifies missing best-practice headers.
+- 📂 **Directory Brute-forcing** – Discovers hidden directories/files using wordlists.
+- 📄 **Report Generation** – Save your scan results to a JSON file.
+- 🧱 Modular codebase – Easily extensible for more scans.
 
 ---
 
-## 📥 Installation
+## 📁 Project Structure
+
+```
+secuscan/
+├── core/
+│   ├── port_scanner.py        # Handles TCP port scanning
+│   ├── header_checker.py      # Checks for HTTP security headers
+│   ├── dirb.py                # Brute-forces common directories
+├── utils/
+│   ├── reporter.py            # Saves reports to JSON
+│   ├── validator.py           # Validates URLs
+├── wordlists/
+│   └── common.txt             # Wordlist for dirb scan
+├── main.py                    # Entry point CLI app
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
+
+---
+
+## 🚀 Installation
 
 ```bash
 git clone https://github.com/yourusername/secuscan.git
 cd secuscan
 pip install -r requirements.txt
-````
-
----
-
-## 🧪 Usage
-
-```bash
-python secuscan.py
 ```
 
-**Input formats:**
+---
 
-* For **HTTP checks**: `https://example.com`
-* For **Port scanning**: `example.com` or IP `192.168.1.1`
+## ⚙️ Usage
+
+### Port Scan
+```bash
+python main.py example.com --ports 80 443 22
+```
+
+### HTTP Header Check
+```bash
+python main.py example.com --url https://example.com
+```
+
+### Directory Brute-force (with custom wordlist)
+```bash
+python main.py example.com --url https://example.com --dirb --wordlist wordlists/common.txt
+```
+
+### Save Results to JSON
+```bash
+python main.py example.com --url https://example.com --report results.json
+```
 
 ---
 
-## 🧠 How It Works
+## ✅ Recommended Headers Checked
 
-| Module         | Description                               |
-| -------------- | ----------------------------------------- |
-| Port Scanner   | Scans 15+ top ports, checks for openness  |
-| Header Check   | Audits missing HTTP security headers      |
-| Dir Bruteforce | Tries to discover common hidden endpoints |
-
----
-
-## 🔒 Ethical Use Only
-
-> ⚠️ **This tool is intended for legal, educational, and authorized testing purposes only.** Do **not** scan systems you don’t own or have explicit permission to audit.
+- Content-Security-Policy
+- X-Content-Type-Options
+- Strict-Transport-Security
+- X-Frame-Options
+- Referrer-Policy
+- Permissions-Policy
 
 ---
 
-## 🌱 TODO
+## 📚 Example Output
 
-* [ ] Add banner grabbing
-* [ ] Export results to PDF/HTML
-* [ ] Add advanced vulnerability checks (e.g., XSS, SQLi)
-* [ ] Add Shodan API integration
-* [ ] Build Flask web interface
+| Type       | Example               |
+|------------|------------------------|
+| Ports      | `22, 80, 443`          |
+| Headers    | `Missing: CSP, HSTS`   |
+| Directories| `/admin`, `/login`     |
+
+---
+
+## 🧠 Notes
+
+- Make sure the target allows scanning (don't break laws).
+- Extend the tool by adding more modules under `/core`.
+
+---
+
+## 🧑‍💻 Author
+
+**Your Name** – [@yourhandle](https://github.com/yourusername)
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+MIT – do what you want with it, but no liability.
 
----
-
-## 👨‍💻 Author
-
-**\[ABUBAKAR NASTEH]**
-🔗 [yourportfolio.com](https://yourportfolio.com)
-🐦 [@yourhandle](https://twitter.com/skycrue44)
-📧 [your.email@example.com](mailto:your.email@example.com)
-
----
-
-## ⭐️ Support
-
-If you find this project helpful, please ⭐ the repo to support ongoing development!
-
-```
-
----
